@@ -1,11 +1,11 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using NetCodeUtility_Sample.JwtAuth.Models;
+using FkNetCoreUtility.FkJwtAuth.Models;
 using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using System.Security.Claims;
 
-namespace NetCodeUtility_Sample.JwtAuth;
+namespace FkNetCoreUtility.FkJwtAuth;
 
 public abstract class BaseJwtAuth : IJwtAuth
 {
@@ -117,7 +117,7 @@ public abstract class BaseJwtAuth : IJwtAuth
                 case TypeCode.Int64:
                 case TypeCode.UInt32:
                     if (value != null)
-                        jwtClaims.Add(new Claim(jsonPropertyName, value.ToString()));
+                        jwtClaims.Add(new Claim(jsonPropertyName, value?.ToString() ?? ""));
                     break;
 
                 default:

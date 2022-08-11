@@ -1,4 +1,4 @@
-﻿namespace NetCodeUtility_Sample.JwtAuth.Models;
+﻿namespace FkNetCoreUtility.FkJwtAuth.Models;
 
 public struct JwtAuthSettings
 {

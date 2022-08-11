@@ -1,13 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NetCodeUtility_Sample.JwtAuth.Models;
-using NetCodeUtility_Sample.JwtAuth.Extension;
-using NetCodeUtility_Sample.JwtAuth.JwtSigning;
-using NetCodeUtility_SampleTests.Models;
+using FkNetCoreUtility.FkJwtAuth.Models;
+using FkNetCoreUtility.FkJwtAuth.Extension;
+using FkNetCoreUtility.FkJwtAuth.JwtSigning;
+using FkNetCoreUtility.FkJwtAuth;
+using FkUtilityTests.Models;
 
-namespace NetCodeUtility_Sample.JwtAuth.Tests;
+namespace FkUtilityTests.FkJwtAuthTest;
 
 [TestClass]
-public class JwtAuthHelperTests
+public class JwtAuthTest
 {
     /// <summary>
     /// RSA Token建立 並 驗證取得Token資料
@@ -15,7 +16,7 @@ public class JwtAuthHelperTests
     [TestMethod]
     public void CreateJwtRSATest()
     {
-        IJwtAuth jwtHelper = new JwtRSA(new JwtAuthSettings
+        IJwtAuth jwtAuth = new JwtRSA(new JwtAuthSettings
         {
             Issuer = "From Test",
             ExpiryMinutes = 480,
@@ -23,12 +24,12 @@ public class JwtAuthHelperTests
             RasPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoK/8Va6vydxEAVDUgpj2VqxAWfbxEWqv9juAGndr1GuO/4xXFzA1bDk7F4soCNo3kmsBGJEh/6PW6z36L5UxH0lPq2Sy+UfUojbevkxsIiiPU8AfnMrpvtgoxAIkbHh0/Dvd+8cOkT/rL47oF0+6ZDiCsPcuW6vbNmJ8y+x3C7Rp08PfHDm8XvtpVsV4/IrbX2qyJKW2UflWfeG+7sWTwMjZlLbGGuKgmfMJ58uvevQoeIBTsl+Dkl2/9Nq1MgaNkr3Lr9rfrcjodvSV1lS8ye7qBCVeQvuR/iMz1p+CngqW3Kb4w5aotgiirSJa2l77aY4PwwyZ8Nr0x1fhNHLMZQIDAQAB"
         });
 
-        var token = jwtHelper.CreateJwt(new JwtCustClaims
+        var token = jwtAuth.CreateJwt(new JwtCustClaims
         {
             UserId = 1
         });
 
-        var ClaimsPrincipal = jwtHelper.ValidateToken(token);
+        var ClaimsPrincipal = jwtAuth.ValidateToken(token);
 
         Assert.IsNotNull(ClaimsPrincipal);
 

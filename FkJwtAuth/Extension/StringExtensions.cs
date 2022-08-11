@@ -1,4 +1,4 @@
-﻿namespace NetCodeUtility_Sample.JwtAuth.Extension;
+﻿namespace FkNetCoreUtility.FkJwtAuth.Extension;
 
 public static class StringExtensions
 {

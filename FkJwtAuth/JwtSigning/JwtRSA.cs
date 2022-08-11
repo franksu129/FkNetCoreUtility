@@ -1,8 +1,8 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using NetCodeUtility_Sample.JwtAuth.Models;
+using FkNetCoreUtility.FkJwtAuth.Models;
 using System.Security.Cryptography;
 
-namespace NetCodeUtility_Sample.JwtAuth.JwtSigning;
+namespace FkNetCoreUtility.FkJwtAuth.JwtSigning;
 
 /// <summary>
 /// 非對稱加密

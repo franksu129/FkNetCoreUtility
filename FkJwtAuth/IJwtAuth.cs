@@ -1,16 +1,16 @@
 using System.Security.Claims;
 
-namespace NetCodeUtility_Sample.JwtAuth;
+namespace FkNetCoreUtility.FkJwtAuth;
 
 public interface IJwtAuth
 {
     /// <summary>
-    /// «Ø¥ßJwt
+    /// å»ºç«‹ JWT
     /// </summary>
     string CreateJwt<TClaims>(TClaims claims) where TClaims : class;
 
     /// <summary>
-    /// ÅçÃÒJwt
+    /// é©—è­‰JWT
     /// </summary>
     ClaimsPrincipal? ValidateToken(string jwt);
 }

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace NetCodeUtility_SampleTests.Models;
+namespace FkUtilityTests.Models;
 
 internal class JwtCustClaims
 {
