@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FkJwtAuth\FkJwtAuth.csproj" />
     <ProjectReference Include="..\FkAwsS3\FkAwsS3.csproj" />
+    <ProjectReference Include="..\FkMail\FkMail.csproj" />
     
   </ItemGroup>
 

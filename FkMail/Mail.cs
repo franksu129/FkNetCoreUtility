@@ -3,6 +3,8 @@ using FkMail.Models;
 using MimeKit;
 using MailKit.Net.Smtp;
 
+namespace FkMail;
+
 public class Mail : IMail
 {
     private readonly MailSettings settings;
@@ -52,5 +54,7 @@ public class Mail : IMail
         message.To.Add(to);
         message.Subject = subject;
         message.Body = GetMessageBody(content, AttachmentFile);
+
+        rootSendMail(message);
     }
 }

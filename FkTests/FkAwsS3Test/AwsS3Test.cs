@@ -13,8 +13,9 @@ public class AwsS3Test
     {
         IAwsS3 jwtHelper = new AwsS3(new AwsS3Settings
         {
-            AccessKeyId = "AKIAWLIO27RQULMYYSOP",
-            SecretAccessKey = "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",
+            AccessKeyId = "",
+            SecretAccessKey = "",
+            // RootName
             BucketName = "franks3bucket",
             Region = "ap-northeast-1"
         });
@@ -25,8 +26,8 @@ public class AwsS3Test
         MyFileStream.CopyTo(MemoryStream);
         var fileUrl = jwtHelper.UploadToS3("FkUtilityTests", MemoryStream, "txt", UrlType.S3);
 
-        // AWS ≈v≠≠¡Ÿª›¨„®s°A•ÿ´e∑|∞∑•ﬂ®Ï®‰•¶Æeæπ§∫
-        //°@var fileUrl = jwtHelper.UploadToS3("image/AvatarCustomer", MemoryStream, "txt", UrlType.S3);
+        // AWS„ÄÄÈÇÑÈúÄË¶ÅÈáùÂ∞çÊ¨äÈôê‰∏ãÂéªÊ∏¨Ë©¶
+        // var fileUrl = jwtHelper.UploadToS3("image/AvatarCustomer", MemoryStream, "txt", UrlType.S3);
 
         Assert.IsNotNull(fileUrl);
     }
@@ -37,8 +38,9 @@ public class AwsS3Test
     {
         IAwsS3 jwtHelper = new AwsS3(new AwsS3Settings
         {
-            AccessKeyId = "AKIAWLIO27RQULMYYSOP",
-            SecretAccessKey = "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",
+            AccessKeyId = "",
+            SecretAccessKey = "",
+             // RootName
             BucketName = "franks3bucket",
             Region = "ap-northeast-1"
         });
